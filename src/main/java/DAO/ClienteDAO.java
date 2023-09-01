@@ -1,6 +1,7 @@
-package DAO;
+package main.java.DAO;
 
-import interfaces.DAO;
+import main.java.factory.MySQLDAOFactory;
+import main.java.interfaces.DAO;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -9,13 +10,25 @@ import java.util.LinkedList;
 public class ClienteDAO implements DAO<ClienteDAO> {
     private Connection conn;
 
-    public ClienteDAO(Connection conexion) throws SQLException {
+    public ClienteDAO(Connection conexion) {
         this.conn = conexion;
     }
 
     @Override
     public void createTable() throws SQLException {
-
+        this.conn = MySQLDAOFactory.connect();
+        String createTable = """
+                CREATE TABLE IF NOT EXISTS cliente (
+                  idCliente INT NOT NULL,
+                  nombre VARCHAR(500) NOT NULL,
+                  email VARCHAR(150) NOT NULL,
+                  PRIMARY KEY (idCliente)
+                );
+                """
+                ;
+        this.conn.prepareStatement(createTable).execute();
+        this.conn.commit();
+        this.conn.close();
     }
 
     @Override
@@ -47,4 +60,6 @@ public class ClienteDAO implements DAO<ClienteDAO> {
     public void insert(ClienteDAO clienteDAO) throws SQLException {
 
     }
+
+
 }

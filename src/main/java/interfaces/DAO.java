@@ -1,4 +1,4 @@
-package interfaces;
+package main.java.interfaces;
 
 import java.sql.SQLException;
 import java.util.LinkedList;

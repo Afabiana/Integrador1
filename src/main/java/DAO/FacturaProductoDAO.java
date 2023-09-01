@@ -1,7 +1,6 @@
-package DAO;
+package main.java.DAO;
 
-import interfaces.DAO;
-
+import main.java.interfaces.DAO;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;

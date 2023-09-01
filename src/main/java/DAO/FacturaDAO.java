@@ -1,10 +1,10 @@
-package DAO;
+package main.java.DAO;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-import interfaces.DAO;
+import main.java.interfaces.DAO;
 public class FacturaDAO implements DAO<FacturaDAO>{
     private Connection conn;
 

@@ -1,9 +1,9 @@
-package factory;
+package main.java.factory;
 
-import DAO.ClienteDAO;
-import DAO.FacturaDAO;
-import DAO.FacturaProductoDAO;
-import DAO.ProductoDAO;
+import main.java.DAO.ClienteDAO;
+import main.java.DAO.FacturaDAO;
+import main.java.DAO.FacturaProductoDAO;
+import main.java.DAO.ProductoDAO;
 
 import java.sql.SQLException;
 
